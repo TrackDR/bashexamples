@@ -9,3 +9,5 @@ for item in `ls *.c *.h`; do echo "converting $item"; a2ps $item -o ${item}.ps ;
 # one line if
 if [ -d /cygdrive/g/VideoLectures/ShapeSpaces/ ]; then echo "hi"; fi
 
+# iterate over range
+END=10;for i in $(seq 1 $END); do echo $i; done
