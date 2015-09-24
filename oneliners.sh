@@ -11,3 +11,4 @@ if [ -d /cygdrive/g/VideoLectures/ShapeSpaces/ ]; then echo "hi"; fi
 
 # iterate over range
 END=10;for i in $(seq 1 $END); do echo $i; done
+INCR=2;END=10;for i in $(seq 1 $INCR $END); do echo $i; done
