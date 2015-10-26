@@ -18,3 +18,6 @@ for item in `ls *.png`; do identify $item; done
 
 #crop all images (pngs) in a dir
 for item in `ls *.png`; do convert $item -crop 256x256+0+0 ../new_test_images/$item; echo $item; done
+
+#rescale all grayscale images to 0 to 255
+for item in `ls *.png`; do convert $item -fx '(u-minima)/(maxima-minima)*255' $item; echo $item; done
