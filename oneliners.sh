@@ -6,6 +6,9 @@ x=10887; while [ $x -le 10917 ]; do echo "$x"; x=`expr $x + 1` ;done
 # one line for loop
 for item in `ls *.c *.h`; do echo "converting $item"; a2ps $item -o ${item}.ps ; done
 
+ls *.c | sed 's/^\(.*\).\(.c\)/a2ps \1.c -o \1.ps/' | sh
+ls *.h | sed 's/^\(.*\).\(.c\)/a2ps \1.h -o \1.ps/' | sh
+
 # one line if
 if [ -d /cygdrive/g/VideoLectures/ShapeSpaces/ ]; then echo "hi"; fi
 
