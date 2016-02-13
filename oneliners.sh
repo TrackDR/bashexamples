@@ -9,6 +9,9 @@ for item in `ls *.c *.h`; do echo "converting $item"; a2ps $item -o ${item}.ps ;
 ls *.c | sed 's/^\(.*\).\(.c\)/a2ps \1.c -o \1.ps/' | sh
 ls *.h | sed 's/^\(.*\).\(.c\)/a2ps \1.h -o \1.ps/' | sh
 
+for item in `ls *.c`; do filename=$(basename "$item"); extension="${filename##*.}"; filename="${filename%.*}"; echo "converting $filename"; a2ps $filename.$extension $filename.ps ; done
+for item in `ls *.h`; do filename=$(basename "$item"); extension="${filename##*.}"; filename="${filename%.*}"; echo "converting $filename"; a2ps $filename.$extension $filename.ps ; done
+
 # one line if
 if [ -d /cygdrive/g/VideoLectures/ShapeSpaces/ ]; then echo "hi"; fi
 
