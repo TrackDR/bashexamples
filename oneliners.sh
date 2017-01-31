@@ -33,3 +33,9 @@ for item in `ls *.png`; do convert $item -fx '(u-minima)/(maxima-minima)*255' $i
 
 # Recursively search all files for a desired string
 SEARCHSTRING=cuda; find . -type f -exec grep -Hn $SEARCHSTRING {} \; | less
+
+# Matches exactly "Some strng to search for"
+# c is for count and E is for extended regular expression
+grep -cE '(^|\s)Some string to search for($|\s)' $filename
+
+
