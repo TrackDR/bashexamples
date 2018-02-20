@@ -46,5 +46,10 @@ grep -cE '(^|\s)Some string to search for($|\s)' $filename
 
 #rename png files
 for x in `ls *.png`; do y=${x%.*}; echo $x; echo $y; mv $x ${y}-new.png; done
+
+#remove "-new" from the files
+rename 's/-new//g' *.las
+
+
    
 
