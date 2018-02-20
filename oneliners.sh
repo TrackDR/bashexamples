@@ -44,4 +44,7 @@ SEARCHSTRING=cuda; find . -type f -exec grep -Hn $SEARCHSTRING {} \; | less
 # c is for count and E is for extended regular expression
 grep -cE '(^|\s)Some string to search for($|\s)' $filename
 
+#rename png files
+for x in `ls *.png`; do y=${x%.*}; echo $x; echo $y; mv $x ${y}-new.png; done
+   
 
