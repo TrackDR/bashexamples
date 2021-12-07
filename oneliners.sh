@@ -50,7 +50,7 @@ for x in `ls *.png`; do y=${x%.*}; echo $x; echo $y; mv $x ${y}-new.png; done
 #remove "-new" from the files
 rename 's/-new//g' *.las
 
-#append two dirs of images horizontally to another dir
+#append two dirs of images horizontally and output to a 3rd directory
 FLDR1="F:\\myfldr1; FLDR2="F:\\myfldr2; FLDR3="F:\\myfldr3; for x in `ls $FLDR1`; do a=$FLDR1\\$x; b=$FLDR2\\$x; c=$FLDR3\\$x; echo $a; echo $b; echo $c; ls $a; ls $b; convert $a $b +append $c; done
    
 
