@@ -57,3 +57,6 @@ for item in `ls *.bin`; do filename=$(basename "$item"); extension="${filename##
 
 # Extract latest commit number from git log to n places
 n=7;commitnum=$(git log | head -1 | cut -f2 -d' ');commitnum=${commitnum:0:$n}; echo $commitnum
+
+# Extract latest commit date from git log for current local branch
+commitdate=$(git log -1 --format="%at" | xargs -I{} date -d @{} +%Y-%m-%d); echo $commitdate
