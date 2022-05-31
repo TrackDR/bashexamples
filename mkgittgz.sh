@@ -1,6 +1,7 @@
 #!/bin/sh
 
-projname="desmume"
+#projname="desmume"
+projname=$1
 
 parentdir=/cygdrive/f/git-$projname
 gitdir=$projname
