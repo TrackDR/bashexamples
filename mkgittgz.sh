@@ -2,7 +2,7 @@
 
 projname="desmume"
 
-parentdir=/cygdrive/f/$projname-git
+parentdir=/cygdrive/f/git-$projname
 gitdir=$projname
 
 pushd $parentdir/$gitdir
