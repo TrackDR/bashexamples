@@ -31,4 +31,11 @@ if [ ! -d $parentdir/$newgitdir ]; then
    popd
 fi
 
+if [ ! -f $parentdir/$newgitdir.tgz ]; then
+   echo "$parentdir/$newgitdir.tgz does not exist"
+   pushd $parentdir
+   tar zcf $newgitdir.tgz $newgitdir
+   popd
+fi
+
 popd
