@@ -60,3 +60,6 @@ n=7;commitnum=$(git log | head -1 | cut -f2 -d' ');commitnum=${commitnum:0:$n}; 
 
 # Extract latest commit date from git log for current local branch
 commitdate=$(git log -1 --format="%at" | xargs -I{} date -d @{} +%Y-%m-%d); echo $commitdate
+
+# Run mkgittgz.sh on all git-* dirs
+for x in `ls -d git-*`; do x=`echo $x | cut -f2 -d'-'`;echo $x; ./mkgittgz.sh $x 1; echo "---------------"; done;
