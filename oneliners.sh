@@ -34,8 +34,8 @@ for item in `ls *.png`; do convert $item -fx '(u-minima)/(maxima-minima)*255' $i
 # resize images
 # use David’s Batch processor for gimp
 # Or 
-convert  in.png -filter Lanczos –resize 2x out.png
-convert  in.png -filter Lanczos –distort Resize 2x out.png
+convert in.png -filter Lanczos –resize 2x out.png
+convert in.png -filter Lanczos –distort Resize 2x out.png
 
 # Recursively search all files for a desired string
 SEARCHSTRING=cuda; find . -type f -exec grep -Hn $SEARCHSTRING {} \; | less
