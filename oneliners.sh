@@ -40,7 +40,7 @@ convert  in.png -filter Lanczos –distort Resize 2x out.png
 # Recursively search all files for a desired string
 SEARCHSTRING=cuda; find . -type f -exec grep -Hn $SEARCHSTRING {} \; | less
 
-# Matches exactly "Some strng to search for"
+# Matches exactly "Some string to search for"
 # c is for count and E is for extended regular expression
 grep -cE '(^|\s)Some string to search for($|\s)' $filename
 
