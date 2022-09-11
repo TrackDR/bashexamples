@@ -63,3 +63,6 @@ commitdate=$(git log -1 --format="%at" | xargs -I{} date -d @{} +%Y-%m-%d); echo
 
 # Run mkgittgz.sh on all git-* dirs
 for x in `ls -d git-*`; do x=`echo $x | cut -f2,3 -d'-'`;echo $x; ./mkgittgz.sh $x 1; echo "---------------"; done;
+
+# Dump images from video, crop images, dump cropped images to video
+./ffmpeg -i input.mp4 %03d.png; for item in `ls *.png`; do convert $item -crop 1066x614+108+48 pics/$item; echo $item; done; ./ffmpeg -r 30 -f image2 -i pics/%03d.png -b 30000k output.mp4
